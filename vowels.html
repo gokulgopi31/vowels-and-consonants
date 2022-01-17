@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            vowels and consonants
+        </title>
+        <style>
+          h2{
+            text-align: center;
+            background-color: orange;
+          }
+        </style>
+    </head>
+    <body>
+      <h1 style="background-color: aqua; border: 10px; text-align: center;">Count the number of vowels and consonants in each word</h1>
+      <script>
+        // Program to count vowels, consonant,
+      // digits and
+      // special character in a given string.
+ 
+      // Function to count number of vowels, consonant,
+      // digitsand special character in a string.
+      function countCharacterType(str) {
+        // Declare the variable vowels,
+        // consonant, digit
+        // and special characters
+        var vowels = 0,
+          consonant = 0,
+          specialChar = 0,
+          digit = 0;
+ 
+        // str.length() function to count number of
+        // character in given string.
+        for (var i = 0; i < str.length; i++) {
+          var ch = str[i];
+ 
+          if ((ch >= "a" && ch <= "z") ||
+          (ch >= "A" && ch <= "Z")) {
+            // To handle upper case letters
+            ch = ch.toLowerCase();
+ 
+            if (ch == "a" || ch == "e" || ch == "i" ||
+            ch == "o" || ch == "u")
+              vowels++;
+            else consonant++;
+          } else if (ch >= "0" && ch <= "9") digit++;
+          else specialChar++;
+        }
+        document.write("<h2> Vowels: " + vowels + "</h2><br>");
+        document.write("<h2> Consonant: " + consonant + "</h2><br>");
+      }
+ 
+      // Driver function.
+      var str = prompt("Please enter the String");
+      countCharacterType(str);
+
+    </script>
+  </body>
+</html>
